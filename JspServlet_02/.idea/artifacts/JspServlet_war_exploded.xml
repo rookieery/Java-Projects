@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JspServlet:war exploded">
+    <output-path>G:/develop/apache-tomcat-9.0.6/webapps/JspServlet</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JspServlet" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: javax.el:javax.el-api:3.0.0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="JspServlet/web/Web" />
+    </root>
+  </artifact>
+</component>

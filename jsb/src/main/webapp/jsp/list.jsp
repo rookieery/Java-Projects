@@ -45,7 +45,35 @@
 
         function updateUser(id) {
             if (confirm("您确定要修改吗？")) {
-            location.href = "${pageContext.request.contextPath}/findUserServlet?id=" + id;
+                location.href = "${pageContext.request.contextPath}/findUserServlet?id=" + id;
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById("batchUpdate").onclick = function () {
+                location.href = "${pageContext.request.contextPath}/batchUpdate";
+            }
+
+            document.getElementById("delSelected").onclick = function () {
+                if (confirm("您确定要全部删除吗？ ")) {
+                    var flag = false;
+                    var cbs = document.getElementsByName("ids");
+                    for (var i = 0; i < cbs.length; i++) {
+                        if (cbs[i].checked) {
+                            flag = true;
+                            break
+                        }
+                    }
+                    if (flag) {
+                        document.getElementById("form").submit();
+                    }
+                }
+            }
+            document.getElementById("firstCb").onclick = function () {
+                var cbs = document.getElementsByName("ids");
+                for (var i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = this.checked;
+                }
             }
         }
     </script>
@@ -56,19 +84,18 @@
 
     <div style="float: left;">
 
-        <form action="" method="post" class="form-inline">
+        <form action="${pageContext.request.contextPath}/SelectedUserServlet" method="post" class="form-inline">
             <div class="form-group">
                 <label for="exampleInputName2">编号</label>
-                <input type="text" class="form-control" id="exampleInputName2">
+                <input type="text" class="form-control" id="exampleInputName2" name="id" >
             </div>
             <div class="form-group">
                 <label for="exampleInputName3">姓名</label>
-                <input type="text" class="form-control" id="exampleInputName3">
+                <input type="text" class="form-control" id="exampleInputName3" name="name">
             </div>
-
             <div class="form-group">
-                <label for="exampleInputEmail2">地址</label>
-                <input type="email" class="form-control" id="exampleInputEmail2">
+                <label for="exampleInputName4">生日</label>
+                <input type="text" class="form-control" id="exampleInputName4" name="birthday">
             </div>
             <button type="submit" class="btn btn-default">查询</button>
         </form>
@@ -79,35 +106,40 @@
 
         <a class="btn btn-primary" href="${pageContext.request.contextPath}/jsp/add.jsp">添加联系人</a>
         <a class="btn btn-primary" href="javascript:void(0);" id="delSelected">删除选中</a>
+        <a class="btn btn-primary" href="javascript:void(0);" id="batchUpdate">批量修改</a>
 
     </div>
-
-    <table border="1" class="table table-bordered table-hover">
-        <tr class="success">
-            <th><input type="checkbox"></th>
-            <th>编号</th>
-            <th>姓名</th>
-            <th>生日</th>
-            <th>性别</th>
-            <th>地址</th>
-        </tr>
-
-        <c:forEach items="${userListKey}" var="user" varStatus="s">
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>${user.id}</td>
-                <td>${user.username}</td>
-                <td>${user.birthday}</td>
-                <td>${user.sex}</td>
-                <td>${user.address}</td>
-                <td><a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
-                    <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id})">删除</a></td>
+    <form id="form" action="${pageContext.request.contextPath}/delSelectedServlet" method="post">
+        <table border="1" class="table table-bordered table-hover">
+            <tr class="success">
+                <th><input type="checkbox" id="firstCb"></th>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>生日</th>
+                <th>性别</th>
+                <th>地址</th>
+                <th>操作</th>
             </tr>
 
-        </c:forEach>
+            <c:forEach items="${userListKey}" var="user" varStatus="s">
+                <tr>
+                    <td><input type="checkbox" name="ids" value="${user.id}"></td>
+                    <td>${user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${user.birthday}</td>
+                    <td>${user.sex}</td>
+                    <td>${user.address}</td>
+                    <td><a class="btn btn-default btn-sm"
+                           href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
+                        <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id})">删除</a></td>
+                </tr>
+
+            </c:forEach>
 
 
-    </table>
+        </table>
+    </form>
+
     <div>
         <nav aria-label="Page navigation">
             <ul class="pagination">

@@ -8,11 +8,12 @@ import com.lu.vo.User;
 
 import java.util.List;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private QueryUserDao queryUserDao = new QueryUserDao();
     private AddUserDao addUserDao = new AddUserDao();
     private DelUserDao delUserDao = new DelUserDao();
     private UpdateUserDao updateUserDao = new UpdateUserDao();
+
     @Override
     public List<User> queryUser() {
         return queryUserDao.queryUser();
@@ -37,4 +38,17 @@ public class UserServiceImpl implements UserService{
     public void updateUser(User user) {
         updateUserDao.updateUser(user);
     }
+
+    @Override
+    public void delPartUser(String[] ids) {
+        for (String id : ids) {
+            delUserDao.delUser(Integer.parseInt(id));
+        }
+    }
+
+    @Override
+    public List<User> selectedQueryUser(String id, String name, String birthday) {
+        return queryUserDao.selectedQueryUser(id,name,birthday);
+    }
+
 }

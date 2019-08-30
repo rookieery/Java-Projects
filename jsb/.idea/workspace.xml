@@ -57,12 +57,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/jsp/fonts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../student" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\code\jsb\src\main\webapp" />
+      <recent name="G:\code\jsb\src\main\webapp\jsp" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.lu" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lu.tools" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\code\jsb\src\main\webapp\jsp\fonts" />
@@ -70,13 +77,6 @@
       <recent name="G:\code\jsb\src\main\webapp\jsp\js" />
       <recent name="G:\code\jsb\src\main\resources" />
       <recent name="G:\code\jsb\src\main\webapp\jap\css" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lu.tools" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\code\jsb\src\main\webapp" />
-      <recent name="G:\code\jsb\src\main\webapp\jsp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -276,6 +276,18 @@
       <workItem from="1566531097602" duration="86000" />
       <workItem from="1566532090745" duration="613000" />
       <workItem from="1566546715761" duration="3765000" />
+      <workItem from="1566734791139" duration="8138000" />
+      <workItem from="1566794614520" duration="2607000" />
+      <workItem from="1566806753099" duration="3708000" />
+      <workItem from="1566814963155" duration="1773000" />
+      <workItem from="1566819622977" duration="4841000" />
+      <workItem from="1566826817693" duration="590000" />
+      <workItem from="1566828550053" duration="1159000" />
+      <workItem from="1566973221369" duration="2941000" />
+      <workItem from="1566990070379" duration="3000" />
+      <workItem from="1566990184806" duration="1791000" />
+      <workItem from="1567058753748" duration="1745000" />
+      <workItem from="1567061889341" duration="8633000" />
     </task>
     <servers />
   </component>

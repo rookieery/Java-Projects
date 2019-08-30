@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class DbManager {
 
@@ -19,6 +20,7 @@ public class DbManager {
 
     public Connection getConnection(){
         try {
+            Properties properties = new Properties();
             Class.forName(driver);
             System.out.println("loading driver success.......");
             conn = DriverManager.getConnection(url,username,password);

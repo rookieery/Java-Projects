@@ -34,6 +34,43 @@ public class QueryUserDao {
         return list;
     }
 
+    public List<User> selectedQueryUser(String id, String name, String birthday) {
+        List<User> list = new ArrayList<>();
+        DbManager dbManager = new DbManager();
+        try {
+            StringBuilder sb = new StringBuilder();
+            String s = "select * from user where 1=1";
+            if (!id.equals("")) {
+                sb.append(" and id like " + id);
+            }
+            if (!name.equals("")) {
+                sb.append(" and username like '" + name + "'");
+            }
+            if (!birthday.equals("")) {
+                sb.append(" and birthday like '" + birthday + "'");
+            }
+            String sql = s + sb;
+            System.out.println(sql);
+            ResultSet rs = dbManager.queryMethod(sql);
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setBirthday(rs.getString("birthday"));
+                user.setSex(rs.getString("sex"));
+                user.setAddress(rs.getString("address"));
+                if (user != null) {
+                    list.add(user);
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            dbManager.closeDb();
+        }
+        return list;
+    }
+
     public User findUserById(int id) {
         User user = new User();
         DbManager dbManager = new DbManager();

@@ -13,5 +13,6 @@
 <body>
 <h3>Hello,SpringMVC!</h3>
 <a href="${pageContext.request.contextPath}/hello">点一下</a>
+<a href="${pageContext.request.contextPath}/query">查询</a>
 </body>
 </html>

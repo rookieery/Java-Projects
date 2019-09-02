@@ -143,24 +143,14 @@ public class SystemController {
         return result;
     }
 
-    /**
-     * @description: 跳转到系统主页面
-     * @param: no
-     * @date: 2019-06-10 10:54 AM
-     * @return: java.lang.String
-     */
+
     @GetMapping("/goSystemMainView")
     public String goSystemMainView() {
         return "system/main";
     }
 
 
-    /**
-     * @description: 注销用户信息
-     * @param: request
-     * @date: 2019-06-11 6:40 PM
-     * @return: void
-     */
+
     @GetMapping("/loginOut")
     public void loginOut(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().removeAttribute("userInfo");

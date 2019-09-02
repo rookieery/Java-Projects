@@ -71,8 +71,8 @@
 
 <body style="font-weight: lighter; ">
 <div class="header" style="padding: 0;">
-    <h3 style="font-weight: lighter; color: white; width: 550px; height: 60px; line-height: 60px; margin: 0 0 0 30px; padding: 0;">
-        Student Management System — SSM
+    <h3 style="font-weight: lighter; color: white; width: 550px; height: 60px; line-height: 60px; margin: 0 0 0 30px; padding: 0;" align="center">
+        西科大学生信息管理系统 — SSM
     </h3>
 </div>
 <div class="loginWraper">

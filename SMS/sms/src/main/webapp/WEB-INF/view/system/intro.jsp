@@ -9,8 +9,8 @@
 <body>
 <div title="欢迎页面" style="padding: 20px; overflow: hidden; color: #8A2BE2;font: lighter 12px 'Lucida Sans Unicode';"
      data-options="iconCls:'icon-heart',plain:true">
-    <p style="font-size: 30px; line-height: 30px; height: 30px;">欢迎来到西科大学生管理系统 (っ•̀ω•́)</p>
-    <p>开发人员: LuZhou</p>
+    <p style="font-size: 30px; line-height: 30px; height: 30px;">欢迎来到西科大学生信息管理系统 (っ•̀ω•́)</p>
+    <p>开发人员: 卢洲</p>
     <p>联系方式-Email: LuZhou13227862250@qq.com</p>
     <p>联系方式-QQ: 1814203288</p>
     <p>开发周期: 2019/8/10 —— 2019/8/23</p>
